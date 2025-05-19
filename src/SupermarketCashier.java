@@ -47,8 +47,7 @@ public class SupermarketCashier{
         }
 
         System.out.print(" = ");
-        System.out.printf("R$%.2f", totalPrice);
-        System.out.println(" " + totalAmount + " items in total.");
+        System.out.printf("R$%.2f (%d items in total)\n", totalPrice, totalAmount);
 
         scanner.close();
 
