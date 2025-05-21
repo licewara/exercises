@@ -1,18 +1,16 @@
-## Getting Started
+# My Coding Practice 🌙
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Hey! 👋 Welcome to my little repo.
+This is where I store all my exercises as I learn and grow through programming!
 
-## Folder Structure
+This repo is mostly for personal use — it helps me practice logic and problem-solving.
 
-The workspace contains two folders by default, where:
+This repository **DOES NOT** have any projects. It is simply made to track my progress.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## 📖 Where the exercises come from
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Most of the exercises here come from:
+- My college classes
+- YouTube tutorials and free online courses
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+So this is it tyyy <333
