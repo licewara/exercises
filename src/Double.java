@@ -16,8 +16,15 @@ public class Double{
       vetor[i] = num;
     }
 
+    int c = 0;
+
     for (int obj : vetor){
-      System.out.print(obj*2 + " ");
+      c++;
+      if (c == 10){
+        System.out.println(obj*2);
+      } else{
+        System.out.print(obj*2 + " ");
+      }
     }
 
     scanner.close();
