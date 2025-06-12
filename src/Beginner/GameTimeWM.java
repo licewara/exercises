@@ -24,7 +24,7 @@ public class GameTimeWM {
                 startMinute++;
             }
             //1 hora à menos, já que os minutos finais é menor do que os minutos iniciais
-            System.out.println("O JOGO DUROU " + (i-1) + " HORA(S) E + " + j + " MINUTO(S)");
+            System.out.println("O JOGO DUROU " + (i-1) + " HORA(S) E " + j + " MINUTO(S)");
         } else if (startHour > endHour && startMinute < endMinute){
             for (i = 0; startHour < (24 + endHour); i++){
                 startHour++;
@@ -49,6 +49,11 @@ public class GameTimeWM {
                 startMinute++;
             }
             System.out.println("O JOGO DUROU " + (i-1) + " HORA(S) E " + j + " MINUTO(S)");
+        } else if (startHour == endHour && startMinute < endMinute) {
+            for (i = 0; startMinute < endMinute; i++) {
+                startMinute++;
+            }
+            System.out.println("O JOGO DUROU 0 HORA(S) E " + i + " MINUTO(S)");
         }
     }
 }
