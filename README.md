@@ -10,6 +10,8 @@ This repository **DOES NOT** have any projects. It is simply made to track my pr
 ## 📖 Where the exercises come from
 
 Most of the exercises here come from:
+- BeeCrowd
+- LeetCode
 - My college classes
 - YouTube tutorials and free online courses
 
