@@ -4,16 +4,18 @@ public class FaculdadeOrion {
     public static void main(String[] args){
 
         //Aluna Maria Souza
-        Aluno aluno1 = new Aluno("Maria Souza", 2025101200, 8, 9);
+        Aluno aluno1 = new Aluno("Maria Souza", "20251012000457", 8, 9);
         Curso curso1 = new Curso("Análise e Desenvolvimento de Sistemas", 600, aluno1);
         Faculdade faculdade1 = new Faculdade("Orion", "Rua das Jujubas", curso1);
 
         System.out.println(faculdade1.resumo());
 
         //Aluno João Lima
-        Aluno aluno2 = new Aluno("João Lima", 2025101201, 5, 7);
+        Aluno aluno2 = new Aluno("João Lima", "20251012000458", 5, 7);
         Curso curso2 = new Curso("Análise e Desenvolvimento de Sistemas", 600, aluno2);
         Faculdade faculdade2 = new Faculdade("Orion", "Rua dos Morcegos", curso2);
+
+        System.out.println(aluno2.CalcularMedia());
 
         aluno2.setNota1(6);
         aluno2.setNota2(8);
@@ -21,16 +23,30 @@ public class FaculdadeOrion {
         System.out.println(aluno2.CalcularMedia());
 
         //Aluna Ana
-        Aluno aluno3 = new Aluno("Ana", 2025101202, 8, 7);
+        Aluno aluno3 = new Aluno("Ana", "20251012000458", 8, 7);
         Curso curso3 = new Curso("Análise e Desenvolvimento de Sistemas", 600, aluno3);
         Faculdade faculdade3 = new Faculdade("Orion", "Rua dos Morcegos", curso3);
 
-        //Aluna Ana
-        Aluno aluno4 = new Aluno("Bruno", 2025101202, 10, 7);
-        Curso curso4 = new Curso("Análise e Desenvolvimento de Sistemas", 600, aluno4);
-        Faculdade faculdade4 = new Faculdade("Orion", "Rua dos Morcegos", curso4);
+        System.out.println(curso3.descricao());
 
+        aluno3.setNome("Bruno");
+        aluno3.setMatricula("20251012000460");
+        aluno3.setNota1(10);
+        aluno3.setNota2(7);
 
+        System.out.println(curso3.descricao());
+
+        //Aluna Clara
+        Aluno aluno4 = new Aluno("Clara", "20251012000461", 5, 8);
+        Curso curso4 = new Curso("Sistemas de Informação", 3000, aluno4);
+        Faculdade faculdade4 = new Faculdade("Orion", "Rua Promiscuous", curso4);
+
+        System.out.println(faculdade4.resumo());
+
+        curso4.setNomeCurso("Redes de Computadores");
+        curso4.setCargaHoraria(2200);
+
+        System.out.println(faculdade4.resumo());
 
     }
 }
@@ -38,11 +54,11 @@ public class FaculdadeOrion {
 class Aluno {
 
     private String nome;
-    private int matricula;
+    private String matricula;
     private double nota1;
     private double nota2;
 
-    public Aluno(String nome, int matricula, double nota1, double nota2){
+    public Aluno(String nome, String matricula, double nota1, double nota2){
         this.nome = nome;
         this.matricula = matricula;
         this.nota1 = nota1;
@@ -53,7 +69,7 @@ class Aluno {
         return nome;
     }
 
-    public int getMatricula(){
+    public String getMatricula(){
         return matricula;
     }
 
@@ -69,7 +85,7 @@ class Aluno {
         this.nome = nome;
     }
 
-    public void setMatricula(int matricula){
+    public void setMatricula(String matricula){
         this.matricula = matricula;
     }
 
