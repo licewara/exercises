@@ -26,9 +26,9 @@ public class Cinema{
 
 class Filmes {
 
-    private String nomeUsuario;
-    private String[] nomeFilme;
-    private double[] notaFilme;
+    private final String nomeUsuario;
+    private final String[] nomeFilme;
+    private final double[] notaFilme;
 
     public Filmes(int qtdFilme, String nome) {
 
@@ -62,7 +62,7 @@ class Filmes {
         for (String nomeFilme : nomeFilme){
             System.out.println("Filme assistido: " + nomeFilme);
             System.out.println("Nota do usuário: " + notaFilme[c]);
-            c += 1;
+            c++;
         }
 
     }
