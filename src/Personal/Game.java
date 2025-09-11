@@ -17,6 +17,7 @@ public class Game{
         int vel_heroina = sc.nextInt();
 
 
+
         sc.nextLine();
         System.out.print("Digite o nome do monstro: ");
         String nome_monstro = sc.nextLine();
@@ -27,6 +28,8 @@ public class Game{
 
         Personagem heroina = new Heroi(nome_heroina, hp_heroina, vel_heroina);
         Personagem monstro = new Monstro(nome_monstro, hp_monstro, vel_monstro);
+
+        heroina.addItem();
 
         int movPointsH = 0;
         int movPointsM = 0;
@@ -42,20 +45,21 @@ public class Game{
         }
 
         do {
-            if (movPointsH > movPointsM){
+            if (movPointsH >= movPointsM){
                 System.out.println("===================================");
-                System.out.println("Escolha a ação da heroína [1 para ATACAR e 2 para CURAR]: ");
+                System.out.println("Escolha a ação da heroína [1 para ABRIR INVENTÁRIO 2 para ATACAR e 3 para CURAR]: ");
                 int escolha = sc.nextInt();
                 if (escolha == 1){
+                    heroina.mostrarInventario();
+                    heroina.usarItem();
+                } else if (escolha == 2){
                     monstro.hp -= heroina.attack();
                     System.out.println("O HP do monstro agora é de " + monstro.hp + " pontos.");
-                } else if (escolha == 2){
+                } else if (escolha == 3){
                     heroina.hp += heroina.heal();
                     System.out.println("O HP da heroína agora é de " + heroina.hp + " pontos.");
                 }
-                escolha = 0;
-                movPointsM += 2;
-                
+                movPointsM += 2;     
             } else if (movPointsH < movPointsM){
                 System.out.println("===================================");
                 System.out.println("Escolha a ação do monstro [1 para ATACAR e 2 para CURAR]: ");
@@ -93,6 +97,7 @@ class Personagem {
     public String name;
     public int hp;
     public int vel;
+    public ArrayList<String> inventario = new ArrayList<String>();
 
     public Personagem(String name, int hp, int vel) {
 
@@ -100,6 +105,37 @@ class Personagem {
         this.hp = hp;
         this.vel = vel;
 
+    }
+
+    public void addItem(){
+        inventario.add("Pocao de Vida");
+        inventario.add("Pocao de Forca");
+        inventario.add("Pocao de Velocidade");
+    }
+
+    public void usarItem(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Digite o nome do item a ser usado: ");
+        String item = sc.nextLine();
+        if (inventario.contains(item)){
+            inventario.remove(item);
+            System.out.println(item + " usado.");
+            if (item.equals("Pocao de Vida")){
+                this.hp += 10;
+                System.out.println("HP aumentado em 10 pontos. HP atual: " + this.hp);
+            } else if (item.equals("Pocao de Forca")){
+                System.out.println("Força aumentada! Próximo ataque causará dano extra.");
+            } else if (item.equals("Pocao de Velocidade")){
+                this.vel += 2;
+                System.out.println("Velocidade aumentada em 5 pontos. VEL atual: " + this.vel);
+            }
+        } else {
+            System.out.println(item + " não encontrado no inventário.");
+        }
+    }
+
+    public void mostrarInventario(){
+        System.out.println("Inventário de " + name + ": " + inventario);
     }
 
     int attack(){
@@ -162,15 +198,14 @@ class Heroi extends Personagem {
         super(name, hp, vel);
     }
 
+    @Override
     public void addItem(){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Digite o nome do item a ser adicionado: ");
-        String item = sc.nextLine();
-        inventario.add(item);
-        System.out.println("Item " + item + " adicionado ao inventário.");
-        sc.close();
+        inventario.add("Pocao de Vida");
+        inventario.add("Pocao de Forca");
+        inventario.add("Pocao de Velocidade");
     }
 
+    @Override
     public void usarItem(){
         Scanner sc = new Scanner(System.in);
         System.out.print("Digite o nome do item a ser usado: ");
@@ -178,10 +213,23 @@ class Heroi extends Personagem {
         if (inventario.contains(item)){
             inventario.remove(item);
             System.out.println(item + " usado.");
+            if (item.equals("Pocao de Vida")){
+                this.hp += 10;
+                System.out.println("HP aumentado em 10 pontos. HP atual: " + this.hp);
+            } else if (item.equals("Pocao de Forca")){
+                System.out.println("Força aumentada! Próximo ataque causará dano extra.");
+            } else if (item.equals("Pocao de Velocidade")){
+                this.vel += 2;
+                System.out.println("Velocidade aumentada em 5 pontos. VEL atual: " + this.vel);
+            }
         } else {
             System.out.println(item + " não encontrado no inventário.");
         }
-        sc.close();
+    }
+
+    @Override
+    public void mostrarInventario(){
+        System.out.println("Inventário de " + name + ": " + inventario);
     }
 
     @Override
