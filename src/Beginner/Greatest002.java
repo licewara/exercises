@@ -8,6 +8,8 @@ maior número e seu respectivo índice a cada vetor.
 A execução só deve ser finalizada quando o valor de N digitado for 0.
  */
 
+package Beginner;
+
 import java.util.Scanner;
 
 public class Greatest002 {

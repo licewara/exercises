@@ -6,6 +6,8 @@ program must print the message “Fora de intervalo” that means "Out of Interv
 The symbol '(' represents greater than. For example:
         [0,25] indicates numbers between 0 and 25.0000, including both.
         (25,50] indicates numbers greater than 25 (25.00001) up to 50.0000000. */
+package Beginner;
+
 import java.io.IOException;
 import java.util.Scanner;
 

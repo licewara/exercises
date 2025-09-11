@@ -9,11 +9,11 @@ public class SimpleCalculate {
  
         Scanner scanner = new Scanner(System.in);
         
-        int codeFirst = scanner.nextInt();
+        //int codeFirst = scanner.nextInt();
         int quantityFirst = scanner.nextInt();
         double priceFirst = scanner.nextDouble();
         
-        int codeSecond = scanner.nextInt();
+        //int codeSecond = scanner.nextInt();
         int quantitySecond = scanner.nextInt();
         double priceSecond = scanner.nextDouble();
         

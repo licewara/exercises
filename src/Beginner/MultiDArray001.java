@@ -6,6 +6,8 @@ Seu programa deve ser capaz de:
 - identificar e imprimir o número de elementos ímpares em cada uma das colunas.
  */
 
+package Beginner;
+
 
 import java.util.Scanner;
 

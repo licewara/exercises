@@ -1,3 +1,5 @@
+package Beginner;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -26,6 +28,8 @@ public class PointCoordinate {
             System.out.println("Eixo X");
         }
 
+
+        scanner.close();
     }
 
 }

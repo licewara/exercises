@@ -3,6 +3,8 @@ e depois os imprima dobrados, isto é, multiplicados por 2.
 
 Siga o padrões de entrada e saída do exemplo abaixo. */
 
+package Beginner;
+
 import java.util.Scanner;
 
 public class Double{

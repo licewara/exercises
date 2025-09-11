@@ -9,9 +9,6 @@ public class Distance {
 
         Scanner scanner = new Scanner(System.in);
 
-        final int velocidadeX = 60;
-        final int velocidadeY = 90;
-
         int distance = scanner.nextInt();
 
         System.out.println((distance * 2) + " minutos");

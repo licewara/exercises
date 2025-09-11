@@ -1,3 +1,5 @@
+package Beginner;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -5,6 +7,7 @@ public class GameTime {
 
     public static void main(String[] args) throws IOException {
 
+        @SuppressWarnings("resource")
         Scanner sc = new Scanner(System.in);
 
         int start = sc.nextInt();

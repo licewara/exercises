@@ -8,6 +8,8 @@ em seguida, percorra o vetor para encontrar qual o maior elemento e o índice
 Imprima qual o maior elemento encontrado e seu índice, conforme o exemplo 
 abaixo. */
 
+package Beginner;
+
 import java.util.Scanner;
 
 public class Greatest {

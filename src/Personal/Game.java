@@ -47,7 +47,7 @@ public class Game{
         do {
             if (movPointsH >= movPointsM){
                 System.out.println("===================================");
-                System.out.println("Escolha a ação da heroína [1 para ABRIR INVENTÁRIO 2 para ATACAR e 3 para CURAR]: ");
+                System.out.println("Escolha a ação da heroína [1 para ABRIR INVENTÁRIO 2 para ATACAR e 3 para FOCO]: ");
                 int escolha = sc.nextInt();
                 if (escolha == 1){
                     heroina.mostrarInventario();
@@ -56,19 +56,19 @@ public class Game{
                     monstro.hp -= heroina.attack();
                     System.out.println("O HP do monstro agora é de " + monstro.hp + " pontos.");
                 } else if (escolha == 3){
-                    heroina.hp += heroina.heal();
+                    heroina.hp += heroina.focus();
                     System.out.println("O HP da heroína agora é de " + heroina.hp + " pontos.");
                 }
                 movPointsM += 2;     
             } else if (movPointsH < movPointsM){
                 System.out.println("===================================");
-                System.out.println("Escolha a ação do monstro [1 para ATACAR e 2 para CURAR]: ");
+                System.out.println("Escolha a ação do monstro [1 para ATACAR e 2 para FOCO]: ");
                 int escolha = sc.nextInt();
                 if (escolha == 1 ){
                     heroina.hp -= monstro.attack();
                     System.out.println("O HP da heroína agora é de " + heroina.hp + " pontos.");
                 } else if (escolha == 2){
-                    monstro.hp += monstro.heal();
+                    monstro.hp += monstro.focus();
                     System.out.println("O HP do monstro agora é de " + monstro.hp + " pontos.");
                 }
                 escolha = 0;
@@ -148,7 +148,7 @@ class Personagem {
         return random.nextInt((max - min) + 1) + min;
     }
 
-    int heal(){
+    int focus(){
         System.out.println("Cura!");
         Random random = new Random();
 
@@ -179,7 +179,7 @@ class Monstro extends Personagem{
     }
 
     @Override
-    int heal(){
+    int focus(){
         System.out.println("Cura do Monstro!");
         Random random = new Random();
 
@@ -244,7 +244,7 @@ class Heroi extends Personagem {
     }
 
     @Override
-    int heal(){
+    int focus(){
         System.out.println("Cura do Herói!");
         Random random = new Random();
 
