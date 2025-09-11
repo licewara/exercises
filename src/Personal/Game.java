@@ -220,7 +220,7 @@ class Heroi extends Personagem {
                 System.out.println("Força aumentada! Próximo ataque causará dano extra.");
             } else if (item.equals("Pocao de Velocidade")){
                 this.vel += 2;
-                System.out.println("Velocidade aumentada em 5 pontos. VEL atual: " + this.vel);
+                System.out.println("Velocidade aumentada!");
             }
         } else {
             System.out.println(item + " não encontrado no inventário.");
